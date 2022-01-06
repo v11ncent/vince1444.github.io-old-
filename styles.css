@@ -1,0 +1,361 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cute+Font&display=swap');
+
+:root {
+    --color-accent-100: #FAF9F7;
+    --color-accent-300: #E3D6CE;
+
+    --ff-primary: 'Roboto', sans-serif;
+    --ff-accent: 'Cute Font', cursive;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--ff-primary);
+}
+ 
+.container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    flex-flow: row wrap;
+    min-width: 0;
+}
+
+.section-space {
+    height: 4rem;
+}
+
+/* HEADER START*/
+header {
+    position: fixed;
+    background-color: white;
+    width: 100%;
+    max-height: 4rem;
+    overflow: hidden;
+    border-bottom: .1rem solid hotpink;
+    z-index: 2; /* so absolute positioned elements don't overlap */
+}
+
+header > .container--logo {
+    display: flex;
+    width: 50%;
+    height: 4rem;
+    align-items: center;
+    justify-content: center;
+}
+
+header > .container--nav {
+    display: flex;
+    width: 50%;
+    height: 4rem;
+    justify-content: flex-end;
+    align-items: center;
+    padding-right: 4rem;
+    overflow: hidden;
+}
+
+header > .container--logo > a > img {
+    border-radius: 50%;
+    height: 3.4rem;
+    border: .1rem solid hotpink;
+}
+
+nav > ul {
+    list-style-type: none;
+}
+
+nav > ul > li {
+    display: inline;
+}
+
+nav > ul > li > a {
+    font-family: var(--ff-accent);
+    font-weight: 400;
+    font-size: 2rem;
+    text-decoration: none; 
+    color: black;
+    border-bottom: .1rem solid hotpink;
+    margin-left: 1.5rem;
+}
+
+@media (max-width: 1074px) {
+    header > .container--logo {
+        width: 100%;
+    }
+
+    header > .container--nav {
+        width: 0;
+        height: 0;
+    }
+}
+/* HEADER END */
+
+
+/* HERO START */
+.hero {
+    padding-top: 5vh;
+    width: 100%;
+    height: 50vh;
+    background-color: var(--color-accent-100);
+}
+
+.hero.container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+
+.container--text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    padding-right: 1.5rem;
+    width: 50%;
+    height: 100%;
+    overflow: auto;
+    line-height: 4rem;
+}
+
+.container--text > div > h1 {
+    font-weight: 400;
+    font-size: 7rem;
+    font-family: var(--ff-accent);
+}
+
+.container--text > div > h2 {
+    font-weight: 300;
+    font-size: 4rem;
+    font-family: var(--ff-accent);
+}
+
+.container--text > div > ul {
+    list-style-type: none;
+    padding: 0;
+    padding-left: 1rem;
+    margin: 0;
+    font-weight: 300;
+    font-size: 3rem;
+    border-left: .3rem solid hotpink;
+    font-family: var(--ff-accent);
+}
+
+.container--text > div > ul > li {
+    display: inline;
+}
+
+.container.hero > .container--image {
+    display: flex;
+    width: 50%;
+    height: 100%;
+    justify-content: center;
+}
+
+.container.hero > .container--image > .person {
+    height: 25rem;
+    border-radius: 50%;
+   
+}
+
+.container.hero > .poro-container {
+    position: relative;
+    border: 1px solid red;
+    width: 100%;
+    height: 100%;
+}
+
+.container.hero > .poro-container > .poro {
+    position: absolute;
+    height: 5rem;
+    top: 50%;
+}
+
+.hero > .space {
+    width: 22rem;
+}
+
+@media (max-width: 1074px) {
+    .container.hero > {
+        overflow: hidden;
+    }
+    
+    .container.hero > .container--text {
+        align-items: center;
+        margin: 0;
+        padding: 0;
+        width: 100%;
+    }
+
+    .container.hero > .container--text > div > ul {
+        list-style-type: square;
+        border-left: 0;
+        padding: 0;
+    }
+
+    .container.hero > .container--text > div > ul > li {
+        display: inline;
+        border-bottom: .3rem solid hotpink;
+    }
+
+    .container.hero > .container--text {
+        text-align: center;
+        width: 100%;
+    }
+
+    .container.hero > .container--image {
+        width: 0;
+        height: 0;
+    }
+
+    .container.hero > .container--image > .person {
+        height: 0;
+        width: 0;
+    }
+}
+/* HERO END */
+
+
+/* ABOUT START */
+.about.container {
+    flex-direction: column;
+}
+
+.about.container > .header {
+    position: relative; /* needs to be relative in order for absolute positioning to work */
+    display: flex;
+    flex-direction: row;
+    font-family: var(--ff-accent);
+    font-weight: 400;
+    font-size: 3.5rem;
+}
+
+.about.container > .header > .space {
+    width: .5rem;
+}   
+
+.about.container > .header > img {
+    position: absolute;
+    left: 100%;
+    top: 15%;
+    border-radius: 50%;
+    height: 3rem;
+    border: .2rem solid hotpink
+}
+
+.about.container > .content {
+    max-width: 62.3rem;
+    margin: 0 1rem 0 1rem;
+    border-left: .3rem solid hotpink;
+    padding-left: 1rem;
+    font-weight: 300;
+    font-size: 2rem;
+    
+}
+
+@media (max-width: 1074px) {
+    .about.container > .content {
+        border-left: 0;
+        text-align: center;
+        padding-left: 0;
+    }
+}
+/* ABOUT END */
+
+/* PROJECTS START */
+.projects.header {
+    text-align: center;
+}
+
+.projects.header > h3 {
+    font-family: var(--ff-accent);
+    font-weight: 400;
+    font-size: 4rem;
+}
+
+.cards-container {
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+.card { 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    flex-basis: 20rem;
+    height: 20rem;
+    margin: 0 1rem 0 1rem;
+    padding: 0 1rem 1rem 1rem;
+    overflow: auto;
+    font-weight: 300;
+    font-size: 1.4rem;
+    background-color: var(--color-accent-100);
+    border: .2rem solid hotpink;
+    border-radius: 5%;
+}
+
+@media (max-width: 1074px) {
+    .cards-container {
+        flex-direction: column;
+    }
+
+    .card {
+        flex: 0 1 20rem;
+        width: 20rem;
+        border-radius: 5%;
+        margin-top: 3rem;
+    }
+}
+
+.card > h4 {
+    font-weight: 300;
+    font-size: 1.5rem;
+}
+
+.circle {
+    height: 1rem;
+    width: 1rem;
+    background-color: var(--color-accent-100);
+    border-radius: 100%;
+    border: .15rem solid black;
+}
+
+/* PROJECTS END */
+
+
+
+
+/* FOOTER START */
+footer {
+    background-color: var(--color-accent-100);
+    text-align: center;
+    font-family: var(--ff-accent);
+    font-weight: 300;
+    font-size: 1.1rem;
+}
+
+.heart {
+    display: inline-block;
+    vertical-align: middle;
+    height: .8rem;
+}
+/* FOOTER END */
+
+body,
+h1,
+h2,
+h3,
+p {
+    margin: 0;
+}
